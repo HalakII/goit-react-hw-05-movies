@@ -34,7 +34,7 @@ const MoviesDetails = () => {
   const releaseDate = release_date.slice(0, 4);
   const userScore = Math.round(vote_average * 10);
   const defaultMovieImg =
-    '<https://ireland.apollo.olxcdn.com/v1/files/0iq0gb9ppip8-UA/image;s=1000x700>';
+    'https://ireland.apollo.olxcdn.com/v1/files/0iq0gb9ppip8-UA/image;s=1000x700';
 
   return (
     <div>

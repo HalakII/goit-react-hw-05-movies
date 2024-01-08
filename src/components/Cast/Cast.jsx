@@ -20,15 +20,25 @@ export const Cast = () => {
     };
     fetchCast();
   }, [movieId]);
+  const defaultMovieImg =
+    'https://ireland.apollo.olxcdn.com/v1/files/0iq0gb9ppip8-UA/image;s=1000x700';
   return (
     <ul>
-      {
-        <li>
-          <img />
-          <p></p>
-          <p>Character:</p>
+      {actors.map(({ name, character, id, profile_path, original_title }) => (
+        <li key={id}>
+          <img
+            width="250px"
+            src={
+              profile_path
+                ? `https://image.tmdb.org/t/p/w500${profile_path}`
+                : defaultMovieImg
+            }
+            alt={original_title}
+          />
+          <p>{name}</p>
+          <p>Character:{character}</p>
         </li>
-      }
+      ))}
     </ul>
   );
 };
