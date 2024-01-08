@@ -18,3 +18,19 @@ export const fetchTrendingList = async () => {
     throw error;
   }
 };
+
+export const fetchSearchMovies = async query => {
+  try {
+    const { data } = await axios.get('search/movie', {
+      params: {
+        api_key: KEY,
+        query,
+        language: 'en-US',
+      },
+    });
+    return data;
+  } catch (error) {
+    console.error('Error fetching movies:', error);
+    throw error;
+  }
+};
