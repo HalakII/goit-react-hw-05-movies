@@ -19,13 +19,16 @@ export const Reviews = () => {
     fetchMovieReviews();
   }, [movieId]);
   return (
-    <ul>
-      {reviews.map(({ id, author, content }) => (
-        <li key={id}>
-          <h4>{author}</h4>
-          <p>{content}</p>
-        </li>
-      ))}
-    </ul>
+    <div>
+      {reviews.length === 0 && <p>No reviews for this movie...</p>}
+      <ul>
+        {reviews.map(({ id, author, content }) => (
+          <li key={id}>
+            <h4>{author}</h4>
+            <p>{content}</p>
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 };
