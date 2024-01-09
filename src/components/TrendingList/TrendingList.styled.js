@@ -34,6 +34,7 @@ export const Item = styled.li`
   border: 1px solid black;
   overflow: hidden;
   color: #b6587c;
+  background-color: #c67e9a;
 `;
 
 export const Photo = styled.img`
@@ -42,11 +43,13 @@ export const Photo = styled.img`
 `;
 
 export const Text = styled.p`
-  font-size: 24px;
+  font-size: 18px;
   font-weight: 600;
   color: black;
   text-align: center;
-
+@media screen and (min-width: 768px) {
+   font-size: 24px;
+  }
   }
 `;
 export const TextScore = styled.p`

@@ -17,47 +17,38 @@ display: flex;
   gap: 15px;
   padding: 10px 40px ;
   font-size: 16px;
-  font-weight: 500;
+  font-weight: 700;
   @media screen and (min-width: 768px) {
     justify-content: flex-start;
-    gap: 30px;
+    gap: 30px;}
+  }
 `;
 
 export const StyledHomeLink = styled(NavLink)`
   color: #ffffff;
+
   font-size: 24px;
   line-height: 1.19;
   padding: 16px 40px;
   text-decoration: none;
-  font-style: italic;
   font-weight: 600;
 `;
 
 export const StyledLink = styled(NavLink)`
-  display: flex;
-  align-items: center;
   gap: 10px;
+  width: 70px;
+  text-align: center;
   color: black;
   background-color: #e8eced;
   text-decoration: none;
   border-radius: 50px;
   transition: transform 0.2s;
-  @media screen and (min-width: 768px) {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    color: black;
-    background-color: #e8eced;
-    text-decoration: none;
-
-    padding: 5px 10px;
-    border-radius: 50px;
-    transition: transform 0.2s;
-  }
+  padding: 5px 15px;
+  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2),
+    0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
 
   &.active {
-    color: black;
-    border: 2px solid #58b692;
+    background-color: #c67e9a;
   }
   &:hover {
     transform: scale(1.1);

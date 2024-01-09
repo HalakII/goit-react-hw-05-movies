@@ -19,9 +19,9 @@ export const Reviews = () => {
     fetchMovieReviews();
   }, [movieId]);
   return (
-    <div>
+    <div style={{ paddingRight: '15px', textAlign: 'justify' }}>
       {reviews.length === 0 && <p>No reviews for this movie...</p>}
-      <ul>
+      <ul style={{ listStyleType: 'none' }}>
         {reviews.map(({ id, author, content }) => (
           <li key={id}>
             <h4>{author}</h4>

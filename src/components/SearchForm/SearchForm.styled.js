@@ -21,6 +21,7 @@ export const StyledSearchIcon = styled(IoSearchOutline)`
 export const Form = styled.form`
   display: flex;
   align-items: center;
+  background: #e8eced;
   width: 100%;
   margin-bottom: 40px;
   max-width: 600px;
