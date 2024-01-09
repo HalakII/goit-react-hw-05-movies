@@ -64,10 +64,5 @@ export const HomeDiv = styled.div`
 `;
 export const HomeTitle = styled.h1`
   color: black;
-
-  margin: 0;
-`;
-
-export const HomeList = styled.ul`
-  padding: 0;
+  margin-bottom: 20px;
 `;
