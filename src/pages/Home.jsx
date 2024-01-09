@@ -1,7 +1,11 @@
 import { TrendingList } from 'components/TrendingList/TrendingList';
 import { fetchTrendingList } from 'helppers/fetch';
 import React, { useEffect, useState } from 'react';
-
+import {
+  HomeDiv,
+  HomeTitle,
+  HomeList,
+} from '../components/TrendingList/TrendingList.styled';
 const Home = () => {
   const [movies, setMovies] = useState([]);
   useEffect(() => {
@@ -18,12 +22,12 @@ const Home = () => {
     fetchTrendingMovies();
   }, []);
   return (
-    <div>
-      <h2>Trending today</h2>
-      <ul>
+    <HomeDiv>
+      <HomeTitle>Trending today</HomeTitle>
+      <HomeList>
         <TrendingList movies={movies} />
-      </ul>
-    </div>
+      </HomeList>
+    </HomeDiv>
   );
 };
 

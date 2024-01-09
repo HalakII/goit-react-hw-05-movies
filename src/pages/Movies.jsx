@@ -3,7 +3,7 @@ import { TrendingList } from 'components/TrendingList/TrendingList';
 import { fetchSearchMovies } from 'helppers/fetch';
 import React, { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
-
+import { HomeDiv } from '../components/TrendingList/TrendingList.styled';
 function Movies() {
   const [movies, setMovies] = useState([]);
   const [searchParam] = useSearchParams();
@@ -25,10 +25,10 @@ function Movies() {
   }, [query]);
 
   return (
-    <div>
+    <HomeDiv>
       <SearchForm />
       <TrendingList movies={movies} />
-    </div>
+    </HomeDiv>
   );
 }
 

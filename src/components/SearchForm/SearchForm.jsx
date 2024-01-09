@@ -1,4 +1,5 @@
 import { useSearchParams } from 'react-router-dom';
+import { SearchDiv, Form, StyledSearchIcon } from './SearchForm.styled';
 
 export const SearchForm = () => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -12,8 +13,8 @@ export const SearchForm = () => {
   };
 
   return (
-    <div>
-      <form autoComplete="off" onSubmit={handleSubmit}>
+    <SearchDiv>
+      <Form autoComplete="off" onSubmit={handleSubmit}>
         <input
           type="text"
           placeholder="Enter movie name..."
@@ -21,8 +22,10 @@ export const SearchForm = () => {
           autoFocus
           defaultValue={searchQuery}
         />
-        <button type="submit">Search</button>
-      </form>
-    </div>
+        <button type="submit">
+          <StyledSearchIcon />
+        </button>
+      </Form>
+    </SearchDiv>
   );
 };
