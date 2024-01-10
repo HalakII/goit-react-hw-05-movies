@@ -9,6 +9,7 @@ import {
   InfoWrp,
   ImgWrp,
   Img,
+  ListGenres,
 } from './MoviesDetails.styled';
 
 const MoviesDetails = () => {
@@ -66,23 +67,25 @@ const MoviesDetails = () => {
           <h3>Overview</h3>
           <p>{overview}</p>
           <h3>Genres</h3>
-          <List>
+          <ListGenres>
             {genres.map(({ name, id }) => (
               <li key={id}>{name}</li>
             ))}
-          </List>
+          </ListGenres>
         </InfoWrp>
       </MovieContainer>
       <AdditionalWrp>
-        <h3>Additional information</h3>
-        <List>
-          <li>
-            <LinkInfo to="cast">Cast</LinkInfo>
-          </li>
-          <li>
-            <LinkInfo to="reviews">Reviews</LinkInfo>
-          </li>
-        </List>
+        <div>
+          <h3>Additional information</h3>
+          <List>
+            <li>
+              <LinkInfo to="cast">Cast</LinkInfo>
+            </li>
+            <li>
+              <LinkInfo to="reviews">Reviews</LinkInfo>
+            </li>
+          </List>
+        </div>
         <Outlet />
       </AdditionalWrp>
     </div>

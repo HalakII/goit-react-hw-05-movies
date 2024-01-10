@@ -12,11 +12,23 @@ export const MovieContainer = styled.div`
   }
 `;
 
-export const List = styled.ul`
+export const ListGenres = styled.ul`
   list-style-type: none;
   display: flex;
   gap: 20px;
   padding-left: 0;
+
+  @media screen and (min-width: 768px) {
+    justify-content: flex-start;
+  }
+`;
+export const List = styled.ul`
+  list-style-type: none;
+  // display: flex;
+  // gap: 15px;
+  padding-left: 0;
+  border-bottom: 2px solid grey;
+
   @media screen and (min-width: 768px) {
     justify-content: flex-start;
   }
@@ -53,10 +65,16 @@ export const LinkInfo = styled(Link)`
 export const AdditionalWrp = styled.div`
   padding: 15px;
   background: #58b692;
+  
+  
   @media screen and (min-width: 768px) {
     padding-left: 0;
   }
-  h3{ margin-left: 15px;}
+  h3 { 
+    margin-left: 15px;}
+  div {
+    border-top: 2px solid grey;
+   }
 }
 `;
 export const Img = styled.img`
