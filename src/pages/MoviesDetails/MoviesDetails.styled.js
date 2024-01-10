@@ -24,10 +24,7 @@ export const ListGenres = styled.ul`
 `;
 export const List = styled.ul`
   list-style-type: none;
-  // display: flex;
-  // gap: 15px;
   padding-left: 0;
-  border-bottom: 2px solid grey;
 
   @media screen and (min-width: 768px) {
     justify-content: flex-start;
@@ -72,10 +69,12 @@ export const AdditionalWrp = styled.div`
   }
   h3 { 
     margin-left: 15px;}
-  div {
-    border-top: 2px solid grey;
-   }
+  
 }
+`;
+export const LineDiv = styled.div`
+  border-top: 2px solid grey;
+  border-bottom: 2px solid grey;
 `;
 export const Img = styled.img`
   padding: 15px;

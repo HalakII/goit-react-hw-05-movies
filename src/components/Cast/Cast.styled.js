@@ -9,6 +9,7 @@ export const CastList = styled.ul`
   margin-top: 0;
   margin-bottom: 0;
   padding-left: 10px;
+  padding-top: 20px;
   list-style: none;
   margin-left: auto;
   margin-right: auto;

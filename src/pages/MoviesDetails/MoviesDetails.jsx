@@ -10,6 +10,7 @@ import {
   ImgWrp,
   Img,
   ListGenres,
+  LineDiv,
 } from './MoviesDetails.styled';
 
 const MoviesDetails = () => {
@@ -75,7 +76,7 @@ const MoviesDetails = () => {
         </InfoWrp>
       </MovieContainer>
       <AdditionalWrp>
-        <div>
+        <LineDiv>
           <h3>Additional information</h3>
           <List>
             <li>
@@ -85,7 +86,7 @@ const MoviesDetails = () => {
               <LinkInfo to="reviews">Reviews</LinkInfo>
             </li>
           </List>
-        </div>
+        </LineDiv>
         <Outlet />
       </AdditionalWrp>
     </div>
