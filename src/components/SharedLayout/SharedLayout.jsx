@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
 import {
   HeaderTag,
@@ -7,6 +7,7 @@ import {
   StyledHomeLink,
   Container,
 } from './SharedLayout.styled';
+import { Loader } from 'components/Loader/Loader';
 
 export const SharedLayout = () => {
   return (
@@ -18,9 +19,9 @@ export const SharedLayout = () => {
         </HeaderNavList>
         <StyledHomeLink to="/">&#127902; Movies World</StyledHomeLink>
       </HeaderTag>
-      <main>
+      <Suspense fallback={<Loader />}>
         <Outlet />
-      </main>
+      </Suspense>
     </Container>
   );
 };

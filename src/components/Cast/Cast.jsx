@@ -4,7 +4,7 @@ import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { CastList, Name, Character, Item, ActorImage } from './Cast.styled';
 
-export const Cast = () => {
+const Cast = () => {
   const { movieId } = useParams();
   const [actors, setActors] = useState([]);
 
@@ -44,3 +44,4 @@ export const Cast = () => {
     </CastList>
   );
 };
+export default Cast;

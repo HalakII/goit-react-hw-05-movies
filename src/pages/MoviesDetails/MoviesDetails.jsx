@@ -1,5 +1,5 @@
 import { fetchMovieInform } from 'helppers/fetch';
-import React, { useEffect, useState } from 'react';
+import React, { Suspense, useEffect, useState } from 'react';
 import { FaArrowRotateLeft } from 'react-icons/fa6';
 import { Outlet, useLocation, useParams } from 'react-router-dom';
 import {
@@ -40,7 +40,7 @@ const MoviesDetails = () => {
     fetchMovieDetails();
   }, [movieId]);
   if (!movieInfo) {
-    return;
+    return null;
   }
   const {
     title,
@@ -105,7 +105,9 @@ const MoviesDetails = () => {
             </li>
           </List>
         </LineDiv>
-        <Outlet />
+        <Suspense fallback={<Loader />}>
+          <Outlet />
+        </Suspense>
       </AdditionalWrp>
     </div>
   );

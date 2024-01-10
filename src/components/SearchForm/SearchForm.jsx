@@ -3,7 +3,7 @@ import { SearchDiv, Form, StyledSearchIcon } from './SearchForm.styled';
 
 export const SearchForm = () => {
   const [searchParams, setSearchParams] = useSearchParams();
-  const query = searchParams.get('query');
+  const query = searchParams.get('query') ?? '';
 
   const handleFormSubmit = e => {
     e.preventDefault();
