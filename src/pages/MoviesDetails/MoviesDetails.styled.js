@@ -83,3 +83,25 @@ export const Img = styled.img`
     min-width: 300px;
   }
 `;
+
+export const LinkBtn = styled(Link)`
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  width: 100px;
+  background-color: #c67e9a;
+  margin: 15px;
+  padding: 5px 15px 5px 15px;
+  border: 1px solid grey;
+  border-radius: 5px;
+  text-decoration: none;
+  color: black;
+  font-weight: 700;
+  &:hover {
+    background-color: #964262;
+  }
+`;
+export const BackDiv = styled.div`
+  background: #58b692;
+  padding: 5px 15px 5px 15px;
+`;

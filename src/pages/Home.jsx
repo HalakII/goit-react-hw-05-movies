@@ -5,10 +5,14 @@ import {
   HomeDiv,
   HomeTitle,
 } from '../components/TrendingList/TrendingList.styled';
+import { Loader } from 'components/Loader/Loader';
+
 const Home = () => {
   const [movies, setMovies] = useState([]);
+  const [loading, setLoading] = useState(false);
   useEffect(() => {
     const fetchTrendingMovies = () => {
+      setLoading(true);
       fetchTrendingList()
         .then(trendingMovies => {
           setMovies(trendingMovies);
@@ -16,7 +20,9 @@ const Home = () => {
         .catch(error => {
           console.log(error);
         })
-        .finally(() => {});
+        .finally(() => {
+          setLoading(false);
+        });
     };
     fetchTrendingMovies();
   }, []);
@@ -24,6 +30,7 @@ const Home = () => {
     <HomeDiv>
       <HomeTitle>Trending today</HomeTitle>
       <TrendingList movies={movies} />
+      {loading && <Loader />}
     </HomeDiv>
   );
 };

@@ -69,3 +69,10 @@ export const HomeTitle = styled.h1`
   color: black;
   margin-bottom: 20px;
 `;
+
+export const TextInfo = styled.p`
+  font-size: 15px;
+  font-weight: 700;
+  color: black;
+  text-align: center;
+`;

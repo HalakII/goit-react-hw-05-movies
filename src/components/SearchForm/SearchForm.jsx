@@ -3,24 +3,23 @@ import { SearchDiv, Form, StyledSearchIcon } from './SearchForm.styled';
 
 export const SearchForm = () => {
   const [searchParams, setSearchParams] = useSearchParams();
-  const searchQuery = searchParams.get('searchQuery') ?? '';
+  const query = searchParams.get('query');
 
-  const handleSubmit = evt => {
-    evt.preventDefault();
-    const form = evt.currentTarget;
-    setSearchParams({ searchQuery: form.elements.searchQuery.value });
-    form.reset();
+  const handleFormSubmit = e => {
+    e.preventDefault();
+    setSearchParams({ query });
   };
 
   return (
     <SearchDiv>
-      <Form autoComplete="off" onSubmit={handleSubmit}>
+      <Form autoComplete="off" onSubmit={handleFormSubmit}>
         <input
           type="text"
           placeholder="Enter movie name..."
-          name="searchQuery"
+          name="query"
           autoFocus
-          defaultValue={searchQuery}
+          onChange={e => setSearchParams({ query: e.target.value })}
+          value={query}
         />
         <button type="submit">
           <StyledSearchIcon />
