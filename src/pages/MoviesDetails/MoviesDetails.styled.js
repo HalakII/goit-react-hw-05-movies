@@ -52,15 +52,13 @@ export const LinkInfo = styled(Link)`
   padding: 5px 35px 5px 35px;
   font-size: 16px;
   font-weight: 700;
+  margin: 15px;
   &:hover {
     background-color: #964262;
   }
-  @media screen and (min-width: 768px) {
-    margin: 15px;
-  }
 `;
 export const AdditionalWrp = styled.div`
-  padding: 15px;
+ 
   background: #58b692;
   
   

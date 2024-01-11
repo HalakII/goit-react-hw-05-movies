@@ -1,3 +1,4 @@
+import { Loader } from 'components/Loader/Loader';
 import { fetchReviews } from 'helppers/fetch';
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
@@ -5,8 +6,10 @@ import { useParams } from 'react-router-dom';
 const Reviews = () => {
   const [reviews, setReviews] = useState([]);
   const { movieId } = useParams();
+  const [loading, setLoading] = useState(false);
   useEffect(() => {
     const fetchMovieReviews = () => {
+      setLoading(true);
       fetchReviews(movieId)
         .then(review => {
           setReviews(review);
@@ -14,17 +17,20 @@ const Reviews = () => {
         .catch(error => {
           console.log(error);
         })
-        .finally(() => {});
+        .finally(() => {
+          setLoading(false);
+        });
     };
     fetchMovieReviews();
   }, [movieId]);
   return (
-    <div style={{ paddingRight: '15px', textAlign: 'justify' }}>
+    <div style={{ padding: '15px', textAlign: 'justify' }}>
+      {loading && <Loader />}
       {reviews.length === 0 && <p>No reviews for this movie...</p>}
       <ul style={{ listStyleType: 'none' }}>
         {reviews.map(({ id, author, content }) => (
           <li key={id}>
-            <h4>{author}</h4>
+            <h4 style={{ marginBottom: '10px' }}>{author}</h4>
             <p>{content}</p>
           </li>
         ))}

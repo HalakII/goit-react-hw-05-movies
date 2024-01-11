@@ -12,7 +12,7 @@ export const List = styled.ul`
   list-style-type: none;
   display: grid;
   max-width: calc(100vw - 65px);
-  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
   grid-gap: 15px;
   margin-top: 0;
   margin-bottom: 0;

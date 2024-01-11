@@ -2,25 +2,28 @@ import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 
 export const HeaderTag = styled.header`
- display: flex;
+  display: flex;
   align-items: center;
-   justify-content: space-between;
+  justify-content: flex-start;
   gap: 10px;
   margin: 0;
   background: #964262;
+  @media screen and (min-width: 768px) {
+    justify-content: space-between;
   }
 `;
 
 export const HeaderNavList = styled.nav`
-display: flex;
+  display: flex;
   justify-content: center;
   gap: 15px;
-  padding: 10px 40px ;
+  padding: 10px 20px;
   font-size: 16px;
   font-weight: 700;
   @media screen and (min-width: 768px) {
     justify-content: flex-start;
-    gap: 30px;}
+    gap: 30px;
+    padding: 10px 40px;
   }
 `;
 
