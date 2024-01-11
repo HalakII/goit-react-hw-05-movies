@@ -32,9 +32,12 @@ export const StyledHomeLink = styled(NavLink)`
 
   font-size: 24px;
   line-height: 1.19;
-  padding: 16px 40px;
+  padding: 16px 20px;
   text-decoration: none;
   font-weight: 600;
+  @media screen and (min-width: 768px) {
+    padding: 16px 40px;
+  }
 `;
 
 export const StyledLink = styled(NavLink)`

@@ -87,7 +87,7 @@ export const LinkBtn = styled(Link)`
   gap: 6px;
   width: 100px;
   background-color: #c67e9a;
-  margin: 15px;
+  // margin: 15px;
   padding: 5px 15px 5px 15px;
   border: 1px solid grey;
   border-radius: 5px;
@@ -100,5 +100,6 @@ export const LinkBtn = styled(Link)`
 `;
 export const BackDiv = styled.div`
   background: #58b692;
-  padding: 5px 15px 5px 15px;
+  padding-top: 15px;
+  padding-left: 15px;
 `;
