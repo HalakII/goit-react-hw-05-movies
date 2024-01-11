@@ -40,13 +40,15 @@ export const Item = styled.li`
 export const Photo = styled.img`
   width: 100%;
   object-fit: cover;
+  margin-bottom: 20px;
 `;
 
 export const Text = styled.p`
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 600;
   color: black;
   text-align: center;
+   margin-bottom: 10px;
 @media screen and (min-width: 768px) {
    font-size: 24px;
   }
@@ -57,6 +59,8 @@ export const TextScore = styled.p`
   font-weight: 700;
   color: black;
   text-align: center;
+  margin-bottom: 10px;
+  vertical-align: bottom;
   }
 `;
 

@@ -19,9 +19,11 @@ export const SharedLayout = () => {
         </HeaderNavList>
         <StyledHomeLink to="/">&#127902; Movies World</StyledHomeLink>
       </HeaderTag>
-      <Suspense fallback={<Loader />}>
-        <Outlet />
-      </Suspense>
+      <main>
+        <Suspense fallback={<Loader />}>
+          <Outlet />
+        </Suspense>
+      </main>
     </Container>
   );
 };

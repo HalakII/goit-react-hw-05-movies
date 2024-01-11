@@ -13,7 +13,6 @@ export const Name = styled.p`
   text-align: center;
   font-size: 16px;
   font-weight: 700;
-  padding-left: 0;
 `;
 export const Character = styled.p`
   text-align: center;

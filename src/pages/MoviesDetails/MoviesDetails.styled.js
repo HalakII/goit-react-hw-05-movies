@@ -16,7 +16,6 @@ export const ListGenres = styled.ul`
   list-style-type: none;
   display: flex;
   gap: 20px;
-  padding-left: 0;
 
   @media screen and (min-width: 768px) {
     justify-content: flex-start;
@@ -37,7 +36,13 @@ export const ImgWrp = styled.div`
 `;
 
 export const InfoWrp = styled.div`
+  display: flex;
+  gap: 15px;
   padding: 15px;
+  flex-direction: column;
+  p {
+    text-align: justify;
+  }
 `;
 
 export const LinkInfo = styled(Link)`
@@ -52,23 +57,17 @@ export const LinkInfo = styled(Link)`
   padding: 5px 35px 5px 35px;
   font-size: 16px;
   font-weight: 700;
-  margin: 15px;
+  margin-bottom: 15px;
   &:hover {
     background-color: #964262;
   }
 `;
 export const AdditionalWrp = styled.div`
- 
   background: #58b692;
-  
-  
-  @media screen and (min-width: 768px) {
-    padding-left: 0;
+  padding: 10px 15px;
+  h3 {
+    margin-bottom: 15px;
   }
-  h3 { 
-    margin-left: 15px;}
-  
-}
 `;
 export const LineDiv = styled.div`
   border-top: 2px solid grey;
