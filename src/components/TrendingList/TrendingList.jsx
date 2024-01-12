@@ -7,15 +7,17 @@ import {
   Text,
   TextScore,
 } from './TrendingList.styled';
+import { useLocation } from 'react-router-dom';
 
 export const TrendingList = ({ movies }) => {
+  const location = useLocation();
   const defaultMovieImg =
     'https://ireland.apollo.olxcdn.com/v1/files/0iq0gb9ppip8-UA/image;s=1000x700';
   return (
     <List>
       {movies.map(({ id, title, poster_path, vote_average }) => (
         <Item key={id}>
-          <StyledLink to={`/movies/${id}`}>
+          <StyledLink to={`/movies/${id}`} state={{ from: location }}>
             <Photo
               width="264px"
               height="384px"
