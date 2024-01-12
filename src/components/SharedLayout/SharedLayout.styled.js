@@ -67,3 +67,27 @@ export const Container = styled.div`
     margin: 0 auto;
   }
 `;
+
+export const Hero = styled.div`
+  background: linear-gradient(67deg, #111 6.82%, rgba(17, 17, 17, 0) 100%),
+    url('https://st3.depositphotos.com/2627021/15486/i/450/depositphotos_154863440-stock-photo-film-movie-background-clapperboard-and.jpg'),
+    lightgray 295.604px -4.18px / 92.376% 104.171% no-repeat;
+  background-size: cover;
+  background-position: center bottom;
+  padding: 50px;
+`;
+
+export const HeroText = styled.div`
+  color: #e8eced;
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.2),
+    -2px -2px 4px rgba(0, 0, 0, 0.2);
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+  max-width: 600px;
+  @media screen and (min-width: 768px) {
+    font-size: 20px;
+  }
+`;

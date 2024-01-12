@@ -24,13 +24,15 @@ const Reviews = () => {
     fetchMovieReviews();
   }, [movieId]);
   return (
-    <div style={{textAlign: 'justify' }}>
+    <div style={{ textAlign: 'justify' }}>
       {loading && <Loader />}
       {reviews.length === 0 && <p>No reviews for this movie...</p>}
       <ul style={{ listStyleType: 'none' }}>
         {reviews.map(({ id, author, content }) => (
           <li key={id}>
-            <h4 style={{ marginBottom: '10px' }}>{author}</h4>
+            <h4 style={{ marginBottom: '10px', marginTop: '20px' }}>
+              {author}
+            </h4>
             <p>{content}</p>
           </li>
         ))}

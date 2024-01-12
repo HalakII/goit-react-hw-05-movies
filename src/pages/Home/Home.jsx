@@ -1,10 +1,7 @@
 import { TrendingList } from 'components/TrendingList/TrendingList';
 import { fetchTrendingList } from 'helppers/fetch';
 import React, { useEffect, useState } from 'react';
-import {
-  HomeDiv,
-  HomeTitle,
-} from '../components/TrendingList/TrendingList.styled';
+import { HomeDiv, HomeTitle } from './Home.styled';
 import { Loader } from 'components/Loader/Loader';
 
 const Home = () => {

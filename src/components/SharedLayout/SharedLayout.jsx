@@ -7,6 +7,7 @@ import {
   StyledHomeLink,
   Container,
 } from './SharedLayout.styled';
+import { HeroText, Hero } from './SharedLayout.styled';
 import { Loader } from 'components/Loader/Loader';
 
 export const SharedLayout = () => {
@@ -20,6 +21,11 @@ export const SharedLayout = () => {
         <StyledHomeLink to="/">&#127902; Movies World</StyledHomeLink>
       </HeaderTag>
       <main>
+        <Hero>
+          <HeroText>
+            <h1>Find, watch, and enjoy a world of films at your fingertips</h1>
+          </HeroText>
+        </Hero>
         <Suspense fallback={<Loader />}>
           <Outlet />
         </Suspense>

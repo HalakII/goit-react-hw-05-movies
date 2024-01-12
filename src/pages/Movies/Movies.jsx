@@ -3,7 +3,7 @@ import { fetchSearchMovies } from 'helppers/fetch';
 import React, { useEffect, useState } from 'react';
 import { SearchDiv, Form, StyledSearchIcon } from './Movies.styled';
 import { useSearchParams } from 'react-router-dom';
-import { HomeDiv, TextInfo } from 'components/TrendingList/TrendingList.styled';
+import { HomeDiv, TextInfo } from '../Home/Home.styled';
 import { Loader } from 'components/Loader/Loader';
 
 function Movies() {
