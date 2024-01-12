@@ -26,7 +26,7 @@ const Reviews = () => {
   return (
     <div style={{ textAlign: 'justify' }}>
       {loading && <Loader />}
-      {reviews.length === 0 && <p>No reviews for this movie...</p>}
+      {!loading && reviews.length === 0 && <p>No reviews for this movie...</p>}
       <ul style={{ listStyleType: 'none' }}>
         {reviews.map(({ id, author, content }) => (
           <li key={id}>
