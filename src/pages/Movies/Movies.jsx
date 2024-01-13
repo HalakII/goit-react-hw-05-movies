@@ -1,10 +1,10 @@
 import { TrendingList } from 'components/TrendingList/TrendingList';
 import { fetchSearchMovies } from 'helppers/fetch';
 import React, { useEffect, useState } from 'react';
-import { SearchDiv, Form, StyledSearchIcon } from './Movies.styled';
 import { useSearchParams } from 'react-router-dom';
 import { HomeDiv, TextInfo } from '../Home/Home.styled';
 import { Loader } from 'components/Loader/Loader';
+import { SearchForm } from 'components/SearchForm/SearchForm';
 
 function Movies() {
   const [movies, setMovies] = useState([]);
@@ -43,28 +43,10 @@ function Movies() {
     setSearchParams({ searchQuery: form.elements.searchQuery.value });
     form.reset();
   };
-  // const updateQueryString = query => {
-  //   const nextParams = query !== '' ? { query } : {};
-  //   setSearchParams(nextParams);
-  // };
 
   return (
     <HomeDiv>
-      <SearchDiv>
-        <Form autoComplete="off" onSubmit={handleSubmit}>
-          <input
-            type="text"
-            placeholder="Enter movie name..."
-            name="searchQuery"
-            autoFocus
-            // value={query}
-          />
-          <button type="submit">
-            <StyledSearchIcon />
-          </button>
-        </Form>
-      </SearchDiv>
-
+      <SearchForm handleSubmit={handleSubmit} />
       {loading && <Loader />}
       {noName && searchQuery && (
         <TextInfo>

@@ -1,27 +1,25 @@
 import { fetchMovieInform } from 'helppers/fetch';
-import React, { Suspense, useEffect, useState } from 'react';
+import React, { Suspense, useEffect, useRef, useState } from 'react';
 import { FaArrowRotateLeft } from 'react-icons/fa6';
 import { Outlet, useLocation, useParams } from 'react-router-dom';
 import {
   MovieContainer,
-  List,
-  AdditionalWrp,
-  LinkInfo,
   InfoWrp,
   ImgWrp,
   Img,
   ListGenres,
-  LineDiv,
   LinkBtn,
   BackDiv,
 } from './MoviesDetails.styled';
 import { Loader } from 'components/Loader/Loader';
+import { AdditionalInfo } from 'components/Aditional/Aditional';
 
 const MoviesDetails = () => {
   const [movieInfo, setMovieInfo] = useState(null);
   const [loading, setLoading] = useState(false);
   const location = useLocation();
   const { movieId } = useParams();
+  const backBtnLocation = useRef(location.state?.from ?? '/');
 
   useEffect(() => {
     const fetchMovieDetails = () => {
@@ -59,7 +57,7 @@ const MoviesDetails = () => {
   return (
     <div>
       <BackDiv>
-        <LinkBtn to={location.state?.from ?? '/'}>
+        <LinkBtn to={backBtnLocation.current}>
           Go back
           <FaArrowRotateLeft />
         </LinkBtn>
@@ -93,22 +91,11 @@ const MoviesDetails = () => {
           </InfoWrp>
         </MovieContainer>
       )}
-      <AdditionalWrp>
-        <LineDiv>
-          <h3>Additional information</h3>
-          <List>
-            <li>
-              <LinkInfo to="cast">Cast</LinkInfo>
-            </li>
-            <li>
-              <LinkInfo to="reviews">Reviews</LinkInfo>
-            </li>
-          </List>
-        </LineDiv>
-        <Suspense fallback={<Loader />}>
-          <Outlet />
-        </Suspense>
-      </AdditionalWrp>
+      <AdditionalInfo />
+
+      <Suspense fallback={<Loader />}>
+        <Outlet />
+      </Suspense>
     </div>
   );
 };
