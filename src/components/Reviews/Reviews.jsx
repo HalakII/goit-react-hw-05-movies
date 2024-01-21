@@ -24,7 +24,7 @@ const Reviews = () => {
     fetchMovieReviews();
   }, [movieId]);
   return (
-    <div style={{ textAlign: 'justify' }}>
+    <div style={{ padding: '15px', textAlign: 'justify' }}>
       {loading && <Loader />}
       {!loading && reviews.length === 0 && <p>No reviews for this movie...</p>}
       <ul style={{ listStyleType: 'none' }}>
